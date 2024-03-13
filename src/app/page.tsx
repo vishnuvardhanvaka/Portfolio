@@ -1,5 +1,4 @@
 "use client";
-import { Nunito } from "next/font/google";
 import { Github, Linkedin, Twitter, BrainCircuit, CodeXml, Bot, Cloud } from 'lucide-react';
 import { ReactTyped } from "react-typed";
 import { useState } from "react";
