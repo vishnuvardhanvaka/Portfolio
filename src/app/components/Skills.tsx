@@ -18,11 +18,11 @@ import { LuBrainCircuit } from "react-icons/lu";
 export default function Skills() {
     const skills = [
         {
-            text: "Machine Learning",
+            text: "ML/DL",
             Icon: LuBrainCircuit,
         },
         {
-            text: "Generative Ai",
+            text: "Gen.Ai",
             Icon: SiAlwaysdata,
         },
         {
@@ -50,7 +50,7 @@ export default function Skills() {
             Icon: SiPostgresql,
         },
         {
-            text: "Cloud Computing",
+            text: "Cloud",
             Icon: FaCloud,
         }
 
