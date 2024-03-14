@@ -4,6 +4,13 @@ import { ReactTyped } from "react-typed";
 import { useState } from "react";
 import Lottie from "lottie-react";
 import animationData from '../../public/aiCircute.json'
+import { Button } from "../components/ui/moving-border";
+import Skills from './components/Skills';
+import {
+    SiReact,
+
+}
+    from "react-icons/si";
 
 // import animation from '/aiCircute.json'
 export default function portfolio() {
@@ -21,8 +28,8 @@ export default function portfolio() {
 
     return (
 
-        <div className="w-full h-full lg:px-20 text-white">
-            <nav className="bg-[#1c1c30] sticky top-0 z-40 border-[#4d4d5d] border-b-[1px]">
+        <div className="w-full h-full lg:px-20 text-white bg-[#1c1c30]">
+            <nav className=" bg-[#1c1c30] sticky top-0 z-40 border-[#4d4d5d] border-b-[1px]">
                 <div className="container px-6 py-4  mx-auto md:flex md:justify-between md:items-center">
                     <div className="flex items-center justify-between">
                         <a href="#">
@@ -30,7 +37,7 @@ export default function portfolio() {
                             <h1 className="text-2xl font-bold">Portfolio.</h1>
                         </a>
                         <div onClick={(e) => { setMenuOpened(!menuOpened) }} className="flex md:hidden">
-                            <div className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                            <div className="text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
                                 {!menuOpened ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
@@ -49,13 +56,13 @@ export default function portfolio() {
 
                     </div>
                     {menuOpened && (
-                        <div className="text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                        <div className="text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                             <div className="flex flex-col md:flex-row">
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#hero-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#services-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#projects-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Portfolio</a>
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#about-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#contact-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#hero-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#services-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#projects-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Portfolio</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#about-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#contact-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
                             </div>
                         </div>
                     )}
@@ -63,19 +70,19 @@ export default function portfolio() {
 
                     <div className="hidden lg:flex text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                         <div className="flex flex-col md:flex-row">
-                            <a href='#hero-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
-                            <a href='#services-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
-                            <a href='#skills-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Skills</a>
-                            <a href='#projects-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Projects</a>
-                            <a href='#about-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
-                            <a href='#contact-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
+                            <a href='#hero-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
+                            <a href='#skills-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Skills</a>
+                            <a href='#services-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
+                            <a href='#projects-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Projects</a>
+                            <a href='#about-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
+                            <a href='#contact-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
                         </div>
                     </div>
                 </div>
             </nav>
 
             {/* Hero section */}
-            <div id="hero-section" className="container px-6  mx-auto lg:h-[90vh] flex items-center ">
+            <div id="hero-section" className="container px-6  mx-auto lg:h-[90vh] flex items-center dark:bg-grid-white/[0.2] bg-grid-black/[0.1]">
                 <div className="items-center lg:flex">
                     <div className="flex lg:hidden items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
                         <img className={`rounded-[100%] w-[80%] h-[80%] lg:max-w-3xl`} src="/squarePic.png" alt="Catalogue-pana.svg" />
@@ -114,16 +121,24 @@ export default function portfolio() {
                             </div>
                             <button
                                 onClick={(e) => { handleCVDownload() }}
-                                className="w-[90%] md:w-[50%] mx-auto flex justify-center lg:mx-0 lg:block px-5 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Download CV</button>
+                                className="w-[90%] md:w-[50%] mx-auto flex justify-center lg:mx-0 lg:block px-6 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500"
+                            >Download CV
+                            </button>
 
                             {/* <button className="w-full px-5 py-3 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Download CV</button> */}
                         </div>
                     </div>
                     <div className="hidden lg:flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                        <img className={`rounded-[100%] w-[80%] h-[80%] lg:max-w-3xl`} src="/squarePic.png" alt="Catalogue-pana.svg" />
+                        <img className={`rounded-[100%] w-[90%] h-[90%] lg:max-w-3xl`} src="/squarePic.png" alt="Catalogue-pana.svg" />
                     </div>
                 </div>
             </div>
+
+            {/* Skills */}
+            <div id="skills-section">
+                <Skills />
+            </div>
+
 
 
             {/* My Services */}
@@ -179,7 +194,7 @@ export default function portfolio() {
             {/* About Me */}
             <div id="about-section" className="w-full lg:h-[100vh] px-3 mx-auto md:px-4 items-center justify-center flex">
                 <div className="mx-auto grid lg:grid-cols-2">
-                    <Lottie className="w-auto mx-auto my-4 rounded-3xl" animationData={animationData} loop={true} />
+                    <Lottie className="w-auto lg:w-96 mx-auto my-4 rounded-3xl" animationData={animationData} loop={true} />
 
                     <div className="w-full flex flex-col justify-center">
                         <h1 className={`text-4xl lg:text-5xl text-center lg:text-left  font-bold py-2`}>About <span className="text-[#5a85fb]">Me</span> </h1>
