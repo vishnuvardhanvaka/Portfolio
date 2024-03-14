@@ -6,6 +6,7 @@ import Lottie from "lottie-react";
 import animationData from '../../public/aiCircute.json'
 import { Button } from "../components/ui/moving-border";
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import {
     SiReact,
 
@@ -141,8 +142,6 @@ export default function portfolio() {
                 <Skills />
             </div>
 
-
-
             {/* My Services */}
             <div id="services-section" className="w-full lg:h-[100vh] items-center flex-col py-16 px-3 mx-auto md:px-4 ">
                 <h1 className="text-center lg:text-left text-4xl lg:text-3xl mb-4 lg:mb-0 font-bold">My <span className="text-[#5a85fb]">Services</span></h1>
@@ -181,16 +180,8 @@ export default function portfolio() {
             </div>
 
             {/* Latest Projects */}
-            <div id="projects-section" className="w-full py-16 px-3 mx-auto md:px-4 ">
-                <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Latest <span className="text-[#5a85fb]">Projects</span></h1>
-                <div className="h-full items-center flex w-full justify-center">
-                    <div className="w-full grid lg:grid-cols-3 justify-center mx-auto">
-                        <img className={`rounded-3xl mx-auto w-[93%] lg:max-w-3xl hover:cursor-pointer`} src="/automation.png" alt="Catalogue-pana.svg" />
-                        <img className={`rounded-3xl mx-auto w-[93%] lg:max-w-3xl hover:cursor-pointer`} src="/automation.png" alt="Catalogue-pana.svg" />
-                        <img className={`rounded-3xl mx-auto w-[93%] lg:max-w-3xl hover:cursor-pointer`} src="/automation.png" alt="Catalogue-pana.svg" />
-
-                    </div>
-                </div>
+            <div id="projects-section">
+                <Projects />
             </div>
 
             {/* About Me */}

@@ -1,4 +1,4 @@
-
+"use client"
 import { HoverEffect } from "../../components/ui/card-hover-effect";
 import {
     SiReact,
@@ -7,7 +7,6 @@ import {
     SiFastapi,
     SiPostgresql,
     SiMongodb,
-    SiJavascript,
     SiAlwaysdata
 
 } from "react-icons/si";
