@@ -7,6 +7,7 @@ import animationData from '../../public/aiCircute.json'
 import { Button } from "../components/ui/moving-border";
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Footer from './components/Footer';
 import {
     SiReact,
 
@@ -242,9 +243,9 @@ export default function portfolio() {
                             Send Message
                         </button>
                     </div>
+                    <Footer />
                 </div>
             </div>
-
 
 
 
