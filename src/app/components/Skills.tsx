@@ -23,7 +23,7 @@ export default function Skills() {
             Icon: LuBrainCircuit,
         },
         {
-            text: "Gen.AI",
+            text: "Generative Ai",
             Icon: SiAlwaysdata,
         },
         {
@@ -57,7 +57,7 @@ export default function Skills() {
 
     ]
     return (
-        <div  className="max-w-5xl mx-auto px-8 h-[100vh]">
+        <div  className="max-w-5xl mx-auto px-8 ">
             <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Tech<span className="text-[#5a85fb]"> Skills</span></h1>
             <HoverEffect items={skills} />
         </div>
