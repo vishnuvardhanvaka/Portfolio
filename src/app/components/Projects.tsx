@@ -32,11 +32,25 @@ export default function Projects() {
             cover: "/portfolio.png",
             background: "bg-green-500",
         },
+        {
+            title: "E-Learning Platform",
+            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
+            link: "http://localhost:3000/",
+            cover: "/portfolio.png",
+            background: "bg-blue-400",
+        },
+        {
+            title: "E-Learning Platform",
+            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
+            link: "http://localhost:3000/",
+            cover: "/portfolio.png",
+            background: "bg-pink-400",
+        },
     ]
     return (
         <div className="py-10 p-5 sm:p-0">
-            <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Star <span className="text-[#5a85fb]">Projects</span></h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-20 pt-20">
+            <h1 className="text-center text-4xl lg:text-5xl mb-5 lg:mb-10 font-bold">Star <span className="text-[#5a85fb]">Projects</span></h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:px-20">
                 {projects.map((project, index) => {
                     return (
                         <Link href={project.link} key={index}>
@@ -51,9 +65,9 @@ export default function Projects() {
                                     <div className="space-y-5">
                                         <h1 className="text-2xl font-bold">{project.title}</h1>
                                         <div className="flex items-center gap-5">
-                                        {project.tech.map((Icon, index) => (
-                                            <Icon key={index} className="w-8 h-8" />
-                                        ))}
+                                            {project.tech.map((Icon, index) => (
+                                                <Icon key={index} className="w-8 h-8" />
+                                            ))}
                                         </div>
                                     </div>
 
