@@ -59,10 +59,12 @@ export default function portfolio() {
                         <div className="text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                             <div className="flex flex-col md:flex-row">
                                 <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#hero-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#skills-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Skills</a>
                                 <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#services-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
-                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#projects-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Portfolio</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#projects-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Projects</a>
                                 <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#about-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
                                 <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#contact-section' className="my-2 transition-colors duration-300 transform text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
+
                             </div>
                         </div>
                     )}
