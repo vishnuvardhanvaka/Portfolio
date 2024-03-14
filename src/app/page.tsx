@@ -155,7 +155,8 @@ export default function portfolio() {
                             />
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">Web Development</h1>
                             <p className="text-center px-6 lg:px-4 text-[1rem]">Whether it's building dynamic and scalable web applications, creating sleek and responsive user interfaces with React and NextJs, designing robust backend systems with Django and FastAPI, or optimizing database performance with MongoDB and MySQL, I've got you covered. Let's collaborate and bring your vision to life on the web!</p>
-                            
+                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                        
                         </div>
                         <div className=" lg:mx-6 rounded-3xl bg-[#494949] bg-opacity-20 my-2 border-blue-500">
                             <Bot
@@ -164,7 +165,8 @@ export default function portfolio() {
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">Machine Learning</h1>
                             {/* <p className="text-center px-6 lg:px-4 text-[1rem]">From predictive modeling using regression to image classification with convolutional neural networks, I leverage advanced algorithms to drive impactful solutions. With expertise in PyTorch for deep learning, I excel in developing robust solutions using convolutional neural networks for image classification and processing, deep neural networks, and Generative Adversarial Networks (GANs). In machine learning</p> */}
                             <p className="text-center px-6 lg:px-4 text-[1rem]">Skilled in leveraging advanced algorithms for impactful solutions, from supervised predictive modeling using regression to unsupervised classification with DBSCAN clustering. With expertise in PyTorch, I excel in developing robust solutions using deep learning techniques like CNNs for image processing, DNNs, and GANs.</p>
-                            
+                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                        
                         </div>
                         <div className=" lg:mx-6 rounded-3xl bg-[#494949] bg-opacity-20 my-2 border-blue-500">
                             <Cloud
@@ -172,7 +174,7 @@ export default function portfolio() {
                             />
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">DevOps & Cloud</h1>
                             <p className="text-center px-6 lg:px-4 text-[1rem]">Automating processes from codebase management to sprint coordination for efficient project delivery with azure DevOps. From VPC setup to secure backups, I ensuring smooth serverless deployments and effective load balancing for increased traffics with optimal performance and robustness.</p>
-                            {/* <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button> */}
+                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
                         </div>
                     </div>
                 </div>
