@@ -14,21 +14,20 @@ import {
 import { FaCloud } from "react-icons/fa";
 import { LuBrainCircuit } from "react-icons/lu";
 import { IconType } from 'react-icons'
-
 import { DirectionAwareHover } from "../../components/ui/direction-aware-hover";
 
 export default function Projects() {
     const projects = [
         {
-            title: "E-Learning Platform ",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, , SiTailwindcss],
+            title: "E-Learning Platform",
+            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
             link: "http://localhost:3000/",
             cover: "/portfolio.png",
             background: "bg-indigo-500",
         },
         {
-            title: "E-Learning Platform ",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, , SiTailwindcss],
+            title: "E-Learning Platform",
+            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
             link: "http://localhost:3000/",
             cover: "/portfolio.png",
             background: "bg-green-500",
@@ -52,9 +51,9 @@ export default function Projects() {
                                     <div className="space-y-5">
                                         <h1 className="text-2xl font-bold">{project.title}</h1>
                                         <div className="flex items-center gap-5">
-                                            {project.tech.map((Icon, index) => {
-                                                return <Icon key={index} className="w-8 h-8" />
-                                            })}
+                                        {project.tech.map((Icon, index) => (
+                                            <Icon key={index} className="w-8 h-8" />
+                                        ))}
                                         </div>
                                     </div>
 
