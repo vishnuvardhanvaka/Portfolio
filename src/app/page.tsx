@@ -1,20 +1,28 @@
 "use client";
-import { Github, Linkedin, Twitter, BrainCircuit, CodeXml, Bot, Cloud } from 'lucide-react';
+import { Github, Linkedin, Twitter, BrainCircuit, CodeXml, Bot, Cloud, Link } from 'lucide-react';
 import { ReactTyped } from "react-typed";
 import { useState } from "react";
+import Lottie from "lottie-react";
+import animationData from '../../public/aiCircute.json'
+
+// import animation from '/aiCircute.json'
 export default function portfolio() {
+    const [menuOpened, setMenuOpened] = useState(false)
     const handleCVDownload = () => {
         const downloadLink = document.createElement("a");
         downloadLink.href = "/vishnu_resume_updated.pdf";
         downloadLink.download = "Vishnu_Resume.pdf";
         downloadLink.click();
     };
-    const [menuOpened, setMenuOpened] = useState(false)
+    function contactMe() {
+
+    }
+
 
     return (
 
         <div className="w-full h-full lg:px-20 text-white">
-            <nav className="bg-[#1c1c30] sticky top-0 border-[#4d4d5d] border-b-[1px]">
+            <nav className="bg-[#1c1c30] sticky top-0 z-40 border-[#4d4d5d] border-b-[1px]">
                 <div className="container px-6 py-4  mx-auto md:flex md:justify-between md:items-center">
                     <div className="flex items-center justify-between">
                         <a href="#">
@@ -24,15 +32,15 @@ export default function portfolio() {
                         <div onClick={(e) => { setMenuOpened(!menuOpened) }} className="flex md:hidden">
                             <div className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
                                 {!menuOpened ? (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
                                     </svg>
 
 
                                 ) : (
                                     <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        strokeWidth="2">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 )}
                             </div>
@@ -43,11 +51,11 @@ export default function portfolio() {
                     {menuOpened && (
                         <div className="text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                             <div className="flex flex-col md:flex-row">
-                                <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Home</a>
-                                <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">About</a>
-                                <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Services</a>
-                                <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Portfolio</a>
-                                <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Contact</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#hero-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#services-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#projects-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Portfolio</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#about-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
+                                <a onClick={(e) => { setMenuOpened(!menuOpened) }} href='#contact-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
                             </div>
                         </div>
                     )}
@@ -55,24 +63,23 @@ export default function portfolio() {
 
                     <div className="hidden lg:flex text-lg font-bold absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                         <div className="flex flex-col md:flex-row">
-                            <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Home</a>
-                            <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">About</a>
-                            <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Services</a>
-                            <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Portfolio</a>
-                            <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0" href="#">Contact</a>
+                            <a href='#hero-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Home</a>
+                            <a href='#services-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Services</a>
+                            <a href='#skills-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Skills</a>
+                            <a href='#projects-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Projects</a>
+                            <a href='#about-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">About</a>
+                            <a href='#contact-section' className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-6 md:my-0">Contact</a>
                         </div>
                     </div>
                 </div>
             </nav>
 
-            <div className="container px-6  mx-auto lg:h-[90vh] flex items-center ">
+            {/* Hero section */}
+            <div id="hero-section" className="container px-6  mx-auto lg:h-[90vh] flex items-center ">
                 <div className="items-center lg:flex">
-
                     <div className="flex lg:hidden items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
                         <img className={`rounded-[100%] w-[80%] h-[80%] lg:max-w-3xl`} src="/squarePic.png" alt="Catalogue-pana.svg" />
                     </div>
-
-
                     <div className="w-full ">
                         <div className="">
                             <h1 className="text-2xl font-semibold text-center lg:text-left md:text-3xl my-4">Hi, Myself</h1>
@@ -112,36 +119,16 @@ export default function portfolio() {
                             {/* <button className="w-full px-5 py-3 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Download CV</button> */}
                         </div>
                     </div>
-
                     <div className="hidden lg:flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
                         <img className={`rounded-[100%] w-[80%] h-[80%] lg:max-w-3xl`} src="/squarePic.png" alt="Catalogue-pana.svg" />
                     </div>
                 </div>
             </div>
 
-            {/* About Me */}
-            <div className="w-full lg:h-[100vh] px-3 mx-auto md:px-4 items-center justify-center flex">
-                <div className="mx-auto grid lg:grid-cols-2">
-                    {/* <img className="w-[500px] mx-auto my-4 rounded-3xl" src="/squarePic.png" alt="/" /> */}
-                    <div className="hidden lg:flex lg:w-[500px] mx-auto my-4 rounded-3xl border-2">
-
-                    </div>
-                    <div className="w-full flex flex-col justify-center">
-                        <h1 className={`text-4xl lg:text-5xl text-center lg:text-left  font-bold py-2`}>About <span className="text-[#5a85fb]">Me</span> </h1>
-                        <h1 className={`md:text-2xl sm:text-3xl text-center lg:text-left text-xl  font-bold mb-4 lg:mb-8`}>AI & FullStack developer</h1>
-                        <p className=' lg:text-md text-center lg:text-left p-0 m-0 '>Hey there! I'm a curious learner on a journey to continuously enhance my skills. With a knack for creativity and critical thinking, I thrive on implementing innovative solutions. My eagerness to explore new topics independently fuels my curiosity, while my adaptability ensures I keep pace with a rapidly changing environment. Collaborating seamlessly with my team, I'm always ready to evolve and achieve success together. I'm eager to embark on new challenges, where I'm certain my skills will flourish.</p>
-                        <p className={`text-lg text-center lg:text-left mt-2 font-bold `}>Let's create something extraordinary together!</p>
-                        {/* <a href='/live' className="bg-red-500  w-[200px] text-center rounded-md mx-auto md:mx-0 font-medium my-6 py-3">Live</a> */}
-                        <div className="mx-auto my-3 flex w-[90%] md:w-[50%] lg:w-full">
-                            <button className="w-full px-6 py-2 mt-6 text-md bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             {/* My Services */}
-            <div className="w-full  py-16 px-3 mx-auto md:px-4 ">
-                <h1 className="text-center lg:text-left text-4xl lg:text-3xl mb-4 lg:mb-10 font-bold">My <span className="text-[#5a85fb]">Services</span></h1>
+            <div id="services-section" className="w-full lg:h-[100vh] items-center flex-col py-16 px-3 mx-auto md:px-4 ">
+                <h1 className="text-center lg:text-left text-4xl lg:text-3xl mb-4 lg:mb-0 font-bold">My <span className="text-[#5a85fb]">Services</span></h1>
                 <div className="h-full items-center flex w-full">
                     <div className="w-full grid lg:grid-cols-3 ">
 
@@ -177,7 +164,7 @@ export default function portfolio() {
             </div>
 
             {/* Latest Projects */}
-            <div className="w-full py-16 px-3 mx-auto md:px-4 ">
+            <div id="projects-section" className="w-full py-16 px-3 mx-auto md:px-4 ">
                 <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Latest <span className="text-[#5a85fb]">Projects</span></h1>
                 <div className="h-full items-center flex w-full justify-center">
                     <div className="w-full grid lg:grid-cols-3 justify-center mx-auto">
@@ -189,22 +176,63 @@ export default function portfolio() {
                 </div>
             </div>
 
-            {/* Contact Me */}
-            <div className="w-full py-16 px-3 mx-auto md:px-4 flex-col justify-center">
-                <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Contact <span className="text-[#5a85fb]">Me</span></h1>
-                <div className="border-2 w-[50%] mx-auto">
-                <div className="h-full items-center flex w-full justify-center">
-                    <div className="w-full grid lg:grid-cols-2 justify-center mx-auto">
-                    <input 
-                    type="text" 
-                    className="w-96 pl-10 pr-4 py-1.5 text-gray-700 border-b bg-transparent border-gray-600 placeholder-gray-400 focus:placeholder-gray-300 focus:border-red-600 g:border-transparent dark:text-gray-300 focus:outline-none " 
-                    placeholder="Search" 
-                    />
-                
-                    <input type='text' placeholder="First Name" />
-                    <input type='text' placeholder="First Name" />
-                    <input type='text' placeholder="First Name" />
+            {/* About Me */}
+            <div id="about-section" className="w-full lg:h-[100vh] px-3 mx-auto md:px-4 items-center justify-center flex">
+                <div className="mx-auto grid lg:grid-cols-2">
+                    <Lottie className="w-auto mx-auto my-4 rounded-3xl" animationData={animationData} loop={true} />
+
+                    <div className="w-full flex flex-col justify-center">
+                        <h1 className={`text-4xl lg:text-5xl text-center lg:text-left  font-bold py-2`}>About <span className="text-[#5a85fb]">Me</span> </h1>
+                        <h1 className={`md:text-2xl sm:text-3xl text-center lg:text-left text-xl  font-bold mb-4 lg:mb-8`}>AI & FullStack developer</h1>
+                        <p className=' lg:text-md text-center lg:text-left p-0 m-0 '>Hey there! I'm a curious learner on a journey to continuously enhance my skills. With a knack for creativity and critical thinking, I thrive on implementing innovative solutions. My eagerness to explore new topics independently fuels my curiosity, while my adaptability ensures I keep pace with a rapidly changing environment. Collaborating seamlessly with my team, I'm always ready to evolve and achieve success together. I'm eager to embark on new challenges, where I'm certain my skills will flourish.</p>
+                        <p className={`text-lg text-center lg:text-left mt-2 font-bold `}>Let's create something extraordinary together!</p>
+                        {/* <a href='/live' className="bg-red-500  w-[200px] text-center rounded-md mx-auto md:mx-0 font-medium my-6 py-3">Live</a> */}
+                        {/* <div className="mx-auto my-3 flex w-[90%] md:w-[50%] lg:w-full">
+                            <button className="w-full px-6 py-2 mt-6 text-md bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                        </div> */}
                     </div>
+                </div>
+            </div>
+
+            {/* Contact Me */}
+            <div id="contact-section" className="w-full py-16 px-3 mx-auto md:px-4 flex-col justify-center">
+                <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-4 font-bold">Contact <span className="text-[#5a85fb]">Me</span></h1>
+                <div className="w-full lg:w-[50%] lg:mx-auto">
+                    <div className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
+                        <div className="w-full lg:grid lg:grid-cols-2 gap-x-4 justify-center mx-auto">
+                            <input
+                                type="text"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none "
+                                placeholder="Full Name"
+                            />
+                            <input
+                                type="text"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none "
+                                placeholder="Email Address"
+                            />
+                            <input
+                                type="text"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                                placeholder="Mobile Number"
+                            />
+                            <input
+                                type="text"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                                placeholder="Email Subject"
+                            />
+                        </div>
+                        <textarea
+                            placeholder="Your message"
+                            className=" w-full lg:w-full max-h-72 min-h-40 mx-4 h-64 bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                        >
+                        </textarea>
+                        <p className="mt-3 text-xs text-gray-400">Let's build a world together.</p>
+                        <button
+                            onClick={(e) => { contactMe() }}
+                            className="w-[90%] md:w-[50%] mx-auto flex justify-center lg:mx-0 lg:block px-5 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500"
+                        >
+                            Send Message
+                        </button>
                     </div>
                 </div>
             </div>
