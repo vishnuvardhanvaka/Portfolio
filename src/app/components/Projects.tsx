@@ -7,6 +7,8 @@ import {
     SiTailwindcss,
     SiFastapi,
     SiPostgresql,
+    SiPython,
+    SiTelegram,
     SiMongodb,
     SiAlwaysdata
 
@@ -14,15 +16,16 @@ import {
 import { FaCloud } from "react-icons/fa";
 import { LuBrainCircuit } from "react-icons/lu";
 import { IconType } from 'react-icons'
+import { FaAws } from "react-icons/fa6";
 import { DirectionAwareHover } from "../../components/ui/direction-aware-hover";
 
 export default function Projects() {
     const projects = [
         {
-            title: "E-Learning Platform",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
-            link: "http://localhost:3000/",
-            cover: "/portfolio.png",
+            title: "DocLocker",
+            tech: [SiPython, SiTelegram, SiMongodb, FaAws],
+            link: "https://t.me/DocLocker_bot/",
+            cover: "/docLocker.png",
             background: "bg-indigo-500",
         },
         {
@@ -53,7 +56,7 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:px-20">
                 {projects.map((project, index) => {
                     return (
-                        <Link href={project.link} key={index}>
+                        <Link href={project.link} target="_blank" key={index}>
                             <div className={cn(
                                 "p-2 rounded-md",
                                 project.background
