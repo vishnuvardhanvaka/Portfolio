@@ -50,15 +50,16 @@ export default function Projects() {
     return (
         <div className="py-10 p-5 sm:p-0">
             <h1 className="text-center text-4xl lg:text-5xl mb-5 lg:mb-10 font-bold">Star <span className="text-[#5a85fb]">Projects</span></h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:px-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:px-5">
                 {projects.map((project, index) => {
                     return (
                         <Link href={project.link} key={index}>
                             <div className={cn(
-                                "p-5 rounded-md",
+                                "p-2 rounded-md",
                                 project.background
                             )}>
                                 <DirectionAwareHover
+                                    
                                     imageUrl={project.cover}
                                     className="w-full space-y-5 cursor-pointer"
                                 >
