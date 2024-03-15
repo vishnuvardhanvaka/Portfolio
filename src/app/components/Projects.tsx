@@ -1,6 +1,13 @@
 "use client";
+import React from "react";
 import { cn } from "@/lib/utils";
-import Link from 'next/link'
+import Link from 'next/link';
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 import {
     SiReact,
     SiNextdotjs,
@@ -18,12 +25,14 @@ import {
 import { BiNetworkChart } from "react-icons/bi";
 import { FaAws } from "react-icons/fa6";
 import { DirectionAwareHover } from "../../components/ui/direction-aware-hover";
+import { AnimatedTooltip } from "../../components/ui/animated-tooltip";
 
 export default function Projects() {
     const projects = [
         {
             title: "DocLocker",
             tech: [SiPython, SiTelegram, SiMongodb, FaAws],
+            techNames:['Python','Telegram','MongoDB','AWS'],
             link: "https://t.me/DocLocker_bot/",
             cover: "/docLocker.png",
             background: "bg-indigo-500",
@@ -31,22 +40,25 @@ export default function Projects() {
         {
             title: "Satillite map to Aerial (GAN)",
             tech: [SiPytorch, SiGooglecolab, BiNetworkChart, SiAlwaysdata],
+            techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
             link: "https://github.com/vishnuvardhanvaka/pix2pix-GAN-satillite-view-to-street-view",
             cover: "/aerialView2.png",
             background: "bg-green-500",
         },
         {
-            title: "E-Learning Platform",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
-            link: "http://localhost:3000/",
-            cover: "/portfolio.png",
+            title: "Brain Tumor Classification (CNN/VGG)",
+            tech: [SiPytorch, SiGooglecolab, BiNetworkChart, SiAlwaysdata],
+            techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
+            link: "https://github.com/vishnuvardhanvaka/Brain-Cancer-Detection-Classification",
+            cover: "/brainTumorDetection.png",
             background: "bg-blue-400",
         },
         {
-            title: "E-Learning Platform",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
-            link: "http://localhost:3000/",
-            cover: "/portfolio.png",
+            title: "Brain Tumor Classification (CNN/VGG)",
+            tech: [SiPytorch, SiGooglecolab, BiNetworkChart, SiAlwaysdata],
+            techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
+            link: "https://github.com/vishnuvardhanvaka/Brain-Cancer-Detection-Classification",
+            cover: "/brainTumorDetection.png",
             background: "bg-pink-400",
         },
     ]
@@ -70,7 +82,29 @@ export default function Projects() {
                                             <h1 className="text-2xl font-bold">{project.title}</h1>
                                             <div className="flex items-center gap-5">
                                                 {project.tech.map((Icon, index) => (
-                                                    <Icon key={index} className="w-8 h-8" />
+
+                                                    <TooltipProvider>
+                                                        <Tooltip>
+                                                            <TooltipTrigger>
+                                                                <Icon
+                                                                    key={index}
+                                                                    className="w-8 h-8 z-30 hover:cursor-pointer"
+                                                                />
+                                                            </TooltipTrigger>
+                                                            <TooltipContent className="z-30">
+                                                                <p>{project.techNames ? project.techNames[index] : 'Machine Learning'}</p>
+                                                            </TooltipContent>
+                                                        </Tooltip>
+                                                    </TooltipProvider>
+
+                                                    // <AnimatedTooltip items={
+                                                    //     [{
+                                                    //         id: index,
+                                                    //         name: project.title,
+                                                    //         Icon: Icon,
+
+                                                    //     }]
+                                                    // } />
                                                 ))}
                                             </div>
                                         </div>
@@ -78,9 +112,6 @@ export default function Projects() {
 
                                 </div>
                             </Link>
-                            <div className="lg:hidden">
-                                <h1 className="text-2xl font-bold">{project.title}</h1>
-                            </div>
                         </div>
                     )
                 })}
