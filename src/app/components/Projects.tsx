@@ -8,14 +8,14 @@ import {
     SiFastapi,
     SiPostgresql,
     SiPython,
+    SiPytorch,
+    SiGooglecolab,
     SiTelegram,
     SiMongodb,
     SiAlwaysdata
 
 } from "react-icons/si";
-import { FaCloud } from "react-icons/fa";
-import { LuBrainCircuit } from "react-icons/lu";
-import { IconType } from 'react-icons'
+import { BiNetworkChart } from "react-icons/bi";
 import { FaAws } from "react-icons/fa6";
 import { DirectionAwareHover } from "../../components/ui/direction-aware-hover";
 
@@ -29,10 +29,10 @@ export default function Projects() {
             background: "bg-indigo-500",
         },
         {
-            title: "E-Learning Platform",
-            tech: [SiNextdotjs, SiPostgresql, SiFastapi, SiTailwindcss],
-            link: "http://localhost:3000/",
-            cover: "/portfolio.png",
+            title: "Satillite map to Aerial (GAN)",
+            tech: [SiPytorch, SiGooglecolab, BiNetworkChart, SiAlwaysdata],
+            link: "https://github.com/vishnuvardhanvaka/pix2pix-GAN-satillite-view-to-street-view",
+            cover: "/aerialView2.png",
             background: "bg-green-500",
         },
         {
@@ -56,27 +56,32 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:px-20">
                 {projects.map((project, index) => {
                     return (
-                        <Link href={project.link} target="_blank" key={index}>
-                            <div className={cn(
-                                "p-2 rounded-md",
-                                project.background
-                            )}>
-                                <DirectionAwareHover
-                                    imageUrl={project.cover}
-                                    className="w-full space-y-5 cursor-pointer"
-                                >
-                                    <div className="space-y-5">
-                                        <h1 className="text-2xl font-bold">{project.title}</h1>
-                                        <div className="flex items-center gap-5">
-                                            {project.tech.map((Icon, index) => (
-                                                <Icon key={index} className="w-8 h-8" />
-                                            ))}
+                        <div>
+                            <Link href={project.link} target="_blank" key={index}>
+                                <div className={cn(
+                                    "p-2 rounded-md",
+                                    project.background
+                                )}>
+                                    <DirectionAwareHover
+                                        imageUrl={project.cover}
+                                        className="w-full space-y-5 cursor-pointer"
+                                    >
+                                        <div className="space-y-5">
+                                            <h1 className="text-2xl font-bold">{project.title}</h1>
+                                            <div className="flex items-center gap-5">
+                                                {project.tech.map((Icon, index) => (
+                                                    <Icon key={index} className="w-8 h-8" />
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
+                                    </DirectionAwareHover>
 
-                                </DirectionAwareHover>
+                                </div>
+                            </Link>
+                            <div className="lg:hidden">
+                                <h1 className="text-2xl font-bold">{project.title}</h1>
                             </div>
-                        </Link>
+                        </div>
                     )
                 })}
 

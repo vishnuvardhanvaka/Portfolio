@@ -56,8 +56,8 @@ export default function Skills() {
 
     ]
     return (
-        <div  className="max-w-5xl mx-auto px-8 ">
-            <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-10 font-bold">Tech<span className="text-[#5a85fb]"> Skills</span></h1>
+        <div  className="max-w-5xl mx-auto px-4 lg:px-8 mt-6">
+            <h1 className="text-center text-4xl lg:text-5xl lg:mb-10 font-bold">Tech<span className="text-[#5a85fb]"> Skills</span></h1>
             <HoverEffect items={skills} />
         </div>
     )
