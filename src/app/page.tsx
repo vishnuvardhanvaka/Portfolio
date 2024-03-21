@@ -211,28 +211,28 @@ export default function portfolio() {
                         <div className="w-full lg:grid lg:grid-cols-2 gap-x-4 justify-center mx-auto">
                             <input
                                 type="text"
-                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none "
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none "
                                 placeholder="Full Name"
                             />
                             <input
                                 type="text"
-                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none "
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none "
                                 placeholder="Email Address"
                             />
                             <input
                                 type="text"
-                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none"
                                 placeholder="Mobile Number"
                             />
                             <input
                                 type="text"
-                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                                className="my-4 w-full bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none"
                                 placeholder="Email Subject"
                             />
                         </div>
                         <textarea
                             placeholder="Your message"
-                            className=" w-full lg:w-full max-h-72 min-h-40 mx-4 h-64 bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparenttext-gray-300 focus:outline-none"
+                            className=" w-full lg:w-full max-h-72 min-h-40 mx-4 h-64 bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none"
                         >
                         </textarea>
                         <p className="mt-3 text-xs text-gray-400">Let's build a world together.</p>

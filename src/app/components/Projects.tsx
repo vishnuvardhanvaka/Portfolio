@@ -19,7 +19,8 @@ import {
     SiGooglecolab,
     SiTelegram,
     SiMongodb,
-    SiAlwaysdata
+    SiAlwaysdata,
+    SiNodedotjs
 
 } from "react-icons/si";
 import { BiNetworkChart } from "react-icons/bi";
@@ -30,12 +31,12 @@ import { AnimatedTooltip } from "../../components/ui/animated-tooltip";
 export default function Projects() {
     const projects = [
         {
-            title: "DocLocker",
-            tech: [SiPython, SiTelegram, SiMongodb, FaAws],
-            techNames:['Python','Telegram','MongoDB','AWS'],
-            link: "https://t.me/DocLocker_bot/",
-            cover: "/docLocker.png",
-            background: "bg-indigo-500",
+            title: "Pluto-AI ChatBot",
+            tech: [ SiNextdotjs, SiNodedotjs, SiTailwindcss, SiAlwaysdata],
+            techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
+            link: "https://v3pluto.vercel.app/",
+            cover: "/pluto_ai_chatbot.png",
+            background: "bg-green-500",
         },
         {
             title: "Satillite map to Aerial (GAN)",
@@ -43,7 +44,15 @@ export default function Projects() {
             techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
             link: "https://github.com/vishnuvardhanvaka/pix2pix-GAN-satillite-view-to-street-view",
             cover: "/aerialView2.png",
-            background: "bg-green-500",
+            background: "bg-yellow-500",
+        },
+        {
+            title: "DocLocker",
+            tech: [SiPython, SiTelegram, SiMongodb, FaAws],
+            techNames:['Python','Telegram','MongoDB','AWS'],
+            link: "https://t.me/DocLocker_bot/",
+            cover: "/docLocker.png",
+            background: "bg-indigo-500",
         },
         {
             title: "Brain Tumor Classification (CNN/VGG)",
@@ -53,14 +62,7 @@ export default function Projects() {
             cover: "/brainTumorDetection.png",
             background: "bg-blue-400",
         },
-        {
-            title: "Brain Tumor Classification (CNN/VGG)",
-            tech: [SiPytorch, SiGooglecolab, BiNetworkChart, SiAlwaysdata],
-            techNames:['Pytorch','Colab','Deep Learning','Gen.Ai'],
-            link: "https://github.com/vishnuvardhanvaka/Brain-Cancer-Detection-Classification",
-            cover: "/brainTumorDetection.png",
-            background: "bg-pink-400",
-        },
+        
     ]
     return (
         <div className="py-10 p-5 sm:p-0">
