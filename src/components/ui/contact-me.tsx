@@ -62,7 +62,7 @@ export default function ContactMe() {
         Contact <span className="text-[#5a85fb]">Me</span>
       </h1>
       <div className="w-full lg:w-[50%] lg:mx-auto">
-        <form className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
+        <div className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
           <div className="w-full lg:grid lg:grid-cols-2 gap-x-4 justify-center mx-auto">
             <input
               type="text"
@@ -107,7 +107,7 @@ export default function ContactMe() {
           >
             Send Message
           </button>
-        </form>
+        </div>
         <Footer />
       </div>
     </div>
