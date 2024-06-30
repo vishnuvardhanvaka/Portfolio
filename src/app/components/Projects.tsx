@@ -70,7 +70,6 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:px-20">
                 {projects.map((project, index) => {
                     return (
-                        <div key={index}>
                             <Link href={project.link} target="_blank" key={index}>
                                 <div className={cn(
                                     "p-2 rounded-md",
@@ -114,7 +113,6 @@ export default function Projects() {
 
                                 </div>
                             </Link>
-                        </div>
                     )
                 })}
 

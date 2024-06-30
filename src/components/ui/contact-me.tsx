@@ -6,34 +6,50 @@ import { sendMail } from "@/app/server-actions/sendMail";
 import { toast } from "sonner";
 
 
+let status = false
 export default function ContactMe() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   async function contactMe() {
-    toast.promise(
-      sendMail({
-        userName: fullName,
-        userEmail: email,
-        message: message,
-      }),
-      {
-        loading: 'Sending your message...',
-        success: (result) => {
-          setFullName("");
-          setEmail("");
-          setMessage("");
-          return 'Sent successfully!';
-        },
-        error: (err) => {
-          console.error('Send mail error:', err);
-          return 'Failed to send message.';
+
+    if (fullName.length !== 0 && email.length !== 0 && message.length !== 0) {
+
+      let promise = toast.promise(
+        sendMail({
+          userName: fullName,
+          userEmail: email,
+          message: message,
+        }),
+        {
+          loading: 'Sending your message...',
+          success: (result) => {
+            console.log(result)
+            status = result.status
+            setFullName("");
+            setEmail("");
+            setMessage("");
+            return 'Sent successfully!';
+
+          },
+
+          error: (err) => {
+            console.error('Send mail error:', err);
+            return 'Failed to send message.';
+          },
+
         }
-      }
-    );
+      );
+      // if (status) {
+      //   toast('Will reach out to you soon 🙂')
+      // }
+
+      // console.log(promise, '&&&&&&&&&&')
+
+    }
   }
-  
+
 
   return (
     <div
@@ -44,7 +60,7 @@ export default function ContactMe() {
         Contact <span className="text-[#5a85fb]">Me</span>
       </h1>
       <div className="w-full lg:w-[50%] lg:mx-auto">
-        <div className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
+        <form className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
           <div className="w-full lg:grid lg:grid-cols-2 gap-x-4 justify-center mx-auto">
             <input
               type="text"
@@ -54,6 +70,7 @@ export default function ContactMe() {
               onChange={(e) => {
                 setFullName(e.target.value);
               }}
+              required
             />
             <input
               type="email"
@@ -63,9 +80,10 @@ export default function ContactMe() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              required
             />
           </div>
-          
+
           <textarea
             placeholder="Your message"
             className=" w-full lg:w-full max-h-72 min-h-40 mx-4 h-64 bg-gray-700 rounded-lg py-3 px-2 pl-4 border-gray-600 placeholder-gray-400 focus:placeholder-gray-500  bg:border-transparent text-gray-300 focus:outline-none"
@@ -73,6 +91,7 @@ export default function ContactMe() {
             onChange={(e) => {
               setMessage(e.target.value);
             }}
+            required
           ></textarea>
           <p className="mt-3 text-xs text-gray-400">
             Let's build a world together.
@@ -81,11 +100,12 @@ export default function ContactMe() {
             onClick={(e) => {
               contactMe();
             }}
+            type="submit"
             className="w-[90%] md:w-[50%] mx-auto flex justify-center lg:mx-0 lg:block px-5 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500"
           >
             Send Message
           </button>
-        </div>
+        </form>
         <Footer />
       </div>
     </div>

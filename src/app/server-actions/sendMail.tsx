@@ -1,5 +1,7 @@
 "use server";
 
+import Error from "next/error";
+
 const nodemailer = require("nodemailer");
 
 interface SendMailProps {
@@ -10,6 +12,7 @@ interface SendMailProps {
 
 export const sendMail = async ({ userName, userEmail, message }: SendMailProps) => {
     try {
+
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -17,7 +20,6 @@ export const sendMail = async ({ userName, userEmail, message }: SendMailProps) 
                 pass: process.env.SMTP_PASSWORD,
             },
         });
-
         const mailOptions = {
             from: process.env.SMTP_EMAIL,
             to: "vakavishnuvardhangowd@gmail.com",
@@ -26,9 +28,15 @@ export const sendMail = async ({ userName, userEmail, message }: SendMailProps) 
             html: `<p>🤝 You have received a new message from: <br>Name: <b>${userName}</b><br>Email: <b>${userEmail}</b><br></p><p>🗨️Message: <br><b>${message}</b></p>`, // HTML body
         };
 
-        const info = await transporter.sendMail(mailOptions);
-        return { status: true, message: "Email sent: " + info.response };
+        const info = transporter.sendMail(mailOptions, (error: any, info: any) => {
+            if (error) {
+                return {status:false}
+            }else{
+                return info
+            }
+        });
+        return {status:true}
     } catch (error: any) {
-        return { status: false, error: error.message };
+        return {status:false}
     }
 };
