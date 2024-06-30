@@ -7,6 +7,7 @@ import animationData from '../../public/aiCircute.json'
 import { Button } from "../components/ui/moving-border";
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import ContactMe from '@/components/ui/contact-me';
 import Footer from './components/Footer';
 import {
     SiReact,
@@ -154,8 +155,8 @@ export default function portfolio() {
                                 className="text-center text-blue-500 mx-auto w-24 h-24"
                             />
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">Web Development</h1>
-                            <p className="text-center px-6 lg:px-4 text-[1rem]">Whether it's building dynamic and scalable web applications, creating sleek and responsive user interfaces with React and NextJs, designing robust backend systems with Django and FastAPI, or optimizing database performance with MongoDB and MySQL, I've got you covered. Let's collaborate and bring your vision to life on the web!</p>
-                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                            <p className="text-center px-6 lg:px-4 text-[1rem] my-6">Whether it's building dynamic and scalable web applications, creating sleek and responsive user interfaces with React and NextJs, designing robust backend systems with Django and FastAPI, or optimizing database performance with MongoDB and MySQL, I've got you covered. Let's collaborate and bring your vision to life on the web!</p>
+                            {/* <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button> */}
                         
                         </div>
                         <div className=" lg:mx-6 rounded-3xl bg-[#494949] bg-opacity-20 my-2 border-blue-500">
@@ -164,8 +165,8 @@ export default function portfolio() {
                             />
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">Machine Learning</h1>
                             {/* <p className="text-center px-6 lg:px-4 text-[1rem]">From predictive modeling using regression to image classification with convolutional neural networks, I leverage advanced algorithms to drive impactful solutions. With expertise in PyTorch for deep learning, I excel in developing robust solutions using convolutional neural networks for image classification and processing, deep neural networks, and Generative Adversarial Networks (GANs). In machine learning</p> */}
-                            <p className="text-center px-6 lg:px-4 text-[1rem]">Skilled in leveraging advanced algorithms for impactful solutions, from supervised predictive modeling using regression to unsupervised classification with DBSCAN clustering. With expertise in PyTorch, I excel in developing robust solutions using deep learning techniques like CNNs for image processing, DNNs, and GANs.</p>
-                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                            <p className="text-center px-6 lg:px-4 text-[1rem] my-6">Skilled in leveraging advanced algorithms for impactful solutions, from supervised predictive modeling using regression to unsupervised classification with DBSCAN clustering. With expertise in PyTorch, I excel in developing robust solutions using deep learning techniques like CNNs for image processing, DNNs, and GANs.</p>
+                            {/* <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button> */}
                         
                         </div>
                         <div className=" lg:mx-6 rounded-3xl bg-[#494949] bg-opacity-20 my-2 border-blue-500">
@@ -173,8 +174,8 @@ export default function portfolio() {
                                 className="text-center text-blue-500 mx-auto w-24 h-24"
                             />
                             <h1 className="text-2xl font-bold text-center lg:text-center md:text-3xl my-4">DevOps & Cloud</h1>
-                            <p className="text-center px-6 lg:px-4 text-[1rem]">Automating processes from codebase management to sprint coordination for efficient project delivery with azure DevOps. From VPC setup to secure backups, I ensuring smooth serverless deployments and effective load balancing for increased traffics with optimal performance and robustness.</p>
-                            <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button>
+                            <p className="text-center px-6 lg:px-4 text-[1rem] my-6">Automating processes from codebase management to sprint coordination for efficient project delivery with azure DevOps. From VPC setup to secure backups, I ensuring smooth serverless deployments and effective load balancing for increased traffics with optimal performance and robustness.</p>
+                            {/* <button className="mx-auto flex lg:block px-8 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500">Read More</button> */}
                         </div>
                     </div>
                 </div>
@@ -204,7 +205,8 @@ export default function portfolio() {
             </div>
 
             {/* Contact Me */}
-            <div id="contact-section" className="w-full py-16 px-3 mx-auto md:px-4 flex-col justify-center">
+            <ContactMe />
+            {/* <div id="contact-section" className="w-full py-16 px-3 mx-auto md:px-4 flex-col justify-center">
                 <h1 className="text-center text-4xl lg:text-5xl mb-4 lg:mb-4 font-bold">Contact <span className="text-[#5a85fb]">Me</span></h1>
                 <div className="w-full lg:w-[50%] lg:mx-auto">
                     <div className="h-full items-center flex flex-col w-full justify-center px-2 lg:px-4">
@@ -245,7 +247,7 @@ export default function portfolio() {
                     </div>
                     <Footer />
                 </div>
-            </div>
+            </div> */}
 
 
 
