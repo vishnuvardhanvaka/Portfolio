@@ -13,6 +13,8 @@ export default function ContactMe() {
   const [message, setMessage] = useState("");
 
   async function contactMe() {
+    
+    // e.preventDefault()
 
     if (fullName.length !== 0 && email.length !== 0 && message.length !== 0) {
 
@@ -100,7 +102,7 @@ export default function ContactMe() {
             onClick={(e) => {
               contactMe();
             }}
-            type="submit"
+            type="button"
             className="w-[90%] md:w-[50%] mx-auto flex justify-center lg:mx-0 lg:block px-5 py-3 my-6 text-sm bg-blue-600 rounded-3xl lg:w-auto hover:bg-blue-500"
           >
             Send Message
